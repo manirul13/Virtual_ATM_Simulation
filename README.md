@@ -1,5 +1,4 @@
 ## Virtual ATM Simulation
-# Overview
 
 The Virtual ATM Simulation project is a C-based console application that emulates the basic functionalities of an Automated Teller Machine (ATM).
 
