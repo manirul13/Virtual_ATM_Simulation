@@ -13,8 +13,8 @@ int dummy_accounts(Account accounts[], int *count)
         fp = fopen(ACCOUNT_FILE, "w");
         fprintf(fp, "Manirul_I 8250623436 8250 15000.00\n");
         fprintf(fp, "Aisha_Khan 0123456789 2001 3000.00\n");
-        fprintf(fp, "Hannah_Clark 1234567890 2012 12000.00\n");
-        fprintf(fp, "John_Doe 1112223333 2011 1200.00\n");
+        fprintf(fp, "Zubeen_Garg 1234567890 2012 12000.00\n");
+        fprintf(fp, "Saif_Ali 1112223333 2011 1200.00\n");
         fprintf(fp, "Alice_Smith 2223334444 2022 1500.00\n");
         fprintf(fp, "Bob_Johnson 3334445555 2033 1600.00\n");
         fprintf(fp, "Carol_White 4445556666 2044 2000.00\n");
