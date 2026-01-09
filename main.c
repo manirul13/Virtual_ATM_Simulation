@@ -34,7 +34,7 @@ int main()
     printf("A/c. Holder: %s  A/c. Number: %ld\n",
            accounts[index].name, accounts[index].account_number);
 
-    int choice;
+    int select;
     do
     {
         printf("\n====================🏦 MAIN MENU====================\n");
@@ -49,9 +49,9 @@ int main()
         printf("6. Mini Statement\n");
         printf("7. Exit\n");
         printf("👉 Enter your choice: ");
-        scanf("%d", &choice);
+        scanf("%d", &select);
 
-        switch (choice)
+        switch (select)
         {
         case 1:
             check_balance(&accounts[index]);
@@ -82,7 +82,7 @@ int main()
 
         save_all_accounts(accounts, count);
 
-    } while (choice != 7);
+    } while (select != 7);
 
     return 0;
 }

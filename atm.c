@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "atm.h"
+#include <termios.h>
+#include <unistd.h>
 
 /* Load all accounts from file */
 int dummy_accounts(Account accounts[], int *count)
@@ -130,7 +132,7 @@ void last_transactions(long account_number)
 void check_balance(Account *acc)
 {
     printf("----------------------------------------------------\n");
-    printf(" Your Current Balance: ₹%.2f\n", acc->balance);
+    printf(" 💸Your Current Balance: ₹%.2f\n", acc->balance);
 }
 
 void deposit(Account *acc)
@@ -191,7 +193,6 @@ void withdraw(Account *acc)
     record_transaction(acc->account_number, "Withdraw", amount);
 }
 
-
 /* Masked PIN entry using getchar() */
 int masked_pin()
 {
@@ -221,6 +222,44 @@ int masked_pin()
 
     return strtol(enter_pin, NULL, 10); // convert to integer safely
 }
+
+
+// int masked_pin(char *enter_pin)
+// {
+//     struct termios oldt, newt;
+//     char ch1;
+//     int i = 0;
+
+//     // Save current terminal settings
+//     tcgetattr(STDIN_FILENO, &oldt);
+//     newt = oldt;
+
+//     // Disable echo
+//     newt.c_lflag &= ~(ECHO);
+//     tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+
+//     // Read exactly 4 digits
+//     while (i < 4)
+//     {
+//         ch1 = getchar();
+
+//         if (ch1 >= '0' && ch1 <= '9')
+//         {
+//             enter_pin[i++] = ch1;
+//             printf("*");          // mask input
+//             fflush(stdout);
+//         }
+//     }
+
+//     enter_pin[i] = '\0';          // null-terminate string
+
+//     // Restore terminal settings
+//     tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+
+//     printf("\n");
+//     return 0;
+// }
+
 
 /* Change PIN */
 void change_pin(Account *acc)
@@ -268,4 +307,3 @@ void fast_cash(Account *acc)
         printf("❌ Insufficient Balance for Fast Cash.\n");
     }
 }
-
