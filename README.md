@@ -1,118 +1,236 @@
-## Virtual ATM Simulation
+# 🏧 Virtual ATM Simulation
 
-The Virtual ATM Simulation project is a C-based console application that emulates the basic functionalities of an Automated Teller Machine (ATM).
+A console-based **Virtual ATM Simulation** developed in **C Programming** that mimics the basic functionalities of a real-world ATM. The project uses **file handling** to store account information and transaction history, providing a persistent banking experience.
 
-It allows users to interact with a virtual banking system, performing tasks such as checking balances, depositing and withdrawing funds, and reviewing transaction history—all without the need for a physical ATM.
+---
 
-# This project is ideal for learning:
+## 📌 Project Overview
 
-File handling in C (accounts.txt, transactions.txt)
+The Virtual ATM Simulation allows users to authenticate using their **Account Number** and **PIN**, then perform common banking operations such as checking balance, depositing money, withdrawing cash, changing the PIN, and viewing transaction history.
 
-Modular programming using .c and .h files
+The project is designed to strengthen concepts of:
 
-User authentication logic
+- C Programming
+- Structures
+- File Handling
+- Modular Programming
+- Authentication
+- Input Validation
+- Data Persistence
 
-Basic data structures for transaction records
+---
 
-## Features
+## ✨ Features
 
-# User Authentication
+- 🔐 Secure Login using Account Number and PIN
+- 💰 Check Account Balance
+- 💵 Deposit Money
+- 💸 Withdraw Money
+- 🔑 Change ATM PIN
+- ⚡ Quick Cash (₹2000)
+- 📜 Mini Statement (Last 5 Transactions)
+- 💾 Automatic Data Persistence using Files
+- 🔒 Masked PIN Input
+- ❌ Input Validation
+- 📂 Modular Code Structure
 
-# Each user account is secured by a PIN.
+---
 
-Only authenticated users can access their account.
+## 📁 Project Structure
 
-# Balance Inquiry
+```
+Virtual_ATM_Simulation/
+│
+├── main.c
+├── atm.c
+├── atm.h
+├── accounts.txt
+├── transactions.txt
+├── Makefile
+├── README.md
+```
 
-Users can view their current account balance anytime.
+---
 
-# Withdrawals
+## ⚙️ Technologies Used
 
-Withdraw money from the account.
+- Language : C
+- Compiler : GCC
+- Operating System : Linux
+- File Handling
+- Standard C Library
+- POSIX Terminal APIs (`termios`)
 
-Includes validation to prevent overdrawing.
+---
 
-# Deposits
+## 📚 Concepts Used
 
-Add funds to the account.
+- Structures
+- Functions
+- Arrays
+- File Handling
+- Modular Programming
+- Input Validation
+- Pointer
+- Authentication
+- Data Persistence
+- Error Handling
 
-# Transaction History
+---
 
-Keep a log of deposits and withdrawals in transactions.txt.
+## 🏦 ATM Functionalities
 
-# Account Management (Optional Extension)
+### Login
 
-Admin can add new accounts or remove accounts (can be added as a future improvement).
+- Account Number Authentication
+- 4-Digit PIN Verification
+- Maximum Login Attempts
+- Masked PIN Entry
 
-# File Structure
-# File	Description
-# atm.c	Implements the ATM operations and logic.
-# atm.h	Header file with function declarations.
-# main.c	Entry point of the program, manages user input and menu.
-# accounts.txt	Stores account numbers, PINs, and balances.
-# transactions.txt	Logs user transactions with timestamps.
+---
 
-# Screenshots / Example Usage
+### Banking Operations
 
-(Optional: Add screenshots or terminal examples here)
+- Check Balance
+- Deposit Amount
+- Withdraw Amount
+- Change PIN
+- Fast Cash
+- Mini Statement
 
-Welcome to Virtual ATM!
-1. Check Balance
-2. Deposit
-3. Withdraw
-4. Transaction History
-5. Exit
-Enter your choice: _
+---
 
-# Compilation and Execution
+## 💾 Data Storage
 
-# Clone the repository:
+### Account Database
 
-git clone https://github.com/manirul13/Virtual_ATM_Simulation.git
+```
+Name  Account_Number  PIN  Balance
+```
 
+Example
 
-Navigate to the project directory:
+```
+Manirul_I 8250623436 8250 15000.00
+```
 
-# cd Virtual_ATM_Simulation
+---
 
+### Transaction History
 
-# Compile the code using gcc:
+Each successful transaction is recorded in:
 
+```
+transactions.txt
+```
+
+Example
+
+```
+8250623436 Deposit 5000
+8250623436 Withdraw 1000
+8250623436 FastCash 2000
+```
+
+---
+
+## ▶️ How to Compile
+
+```bash
 gcc main.c atm.c -o atm
+```
 
+---
 
-# Run the simulation:
+## ▶️ Run
 
+```bash
 ./atm
+```
 
-# How It Works
-1. Login: The user enters their account number and PIN.
-2. Menu Display: After authentication, a menu allows access to different operations.
-3. Transactions: Each transaction is recorded in transactions.txt for future reference.
-4. Validation: The program checks for invalid inputs, insufficient funds, and incorrect PINs.
+---
 
+## 🖥️ Sample Output
 
-## Future Improvements
-1. Add GUI support (e.g., with GTK or Qt).
-2. Encrypt accounts.txt and transactions.txt for security.
-3. Support multiple currencies.
-4. Implement admin features (create, delete accounts).
-5. Add unit tests for transaction functions.
+```
+===============================
+🏧 WELCOME TO VIRTUAL ATM
+===============================
 
+Enter Account Number :
+8250623436
 
-## Contributing
-1. Contributions are welcome! Please follow these steps:
-2. Fork the repository
-3. Create a new branch (git checkout -b feature-name).
-4. Make your changes.
-5. Commit changes (git commit -m "Add feature").
-6. Push to branch (git push origin feature-name).
-7. Open a pull request.
+Enter PIN :
+****
 
-# Author / Contact
+Login Successful
 
-Author: Manirul
+1. Check Balance
+2. Deposit Money
+3. Withdraw Money
+4. Change PIN
+5. Fast Cash
+6. Mini Statement
+7. Exit
+```
+
+---
+
+## 🔒 Input Validations
+
+- Invalid Account Number
+- Incorrect PIN
+- Deposit amount must be positive
+- Withdrawal amount must be within limits
+- Amount must be a multiple of ₹100
+- Insufficient Balance
+- Invalid Menu Selection
+
+---
+
+## 🚀 Future Enhancements
+
+- Password Encryption
+- PIN Hashing
+- Date & Time for Transactions
+- Money Transfer
+- Account Creation
+- Account Deletion
+- Admin Panel
+- Interest Calculation
+- Loan Management
+- SMS Notification
+- GUI Version
+- Database Integration (SQLite/MySQL)
+
+---
+
+## 🎯 Learning Outcomes
+
+Through this project, I gained practical experience in:
+
+- Modular Programming
+- File Handling
+- Authentication Systems
+- Data Persistence
+- Console-based User Interface
+- Secure Input Handling
+- Banking Workflow Simulation
+
+---
+
+## 👨‍💻 Author
+
+**Manirul Islam**
 
 GitHub: https://github.com/manirul13
 
- 
+Repository:
+
+https://github.com/manirul13/Virtual_ATM_Simulation
+
+---
+
+## ⭐ If you found this project useful
+
+Please consider giving the repository a **Star ⭐**.
