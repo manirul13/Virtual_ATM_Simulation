@@ -183,7 +183,7 @@ void withdraw(Account *acc)
     if (amount > acc->balance)
     {
         printf("----------------------------------------------------\n");
-        printf("❌ Insufficient balance!\n");
+        printf("❌ Insufficient balance! Apply for the Credit Card on SBI Simple Save\n");
         return;
     }
 
